@@ -4,6 +4,7 @@ import Image from 'next/image'
 import axios from 'axios'
 import MovieTitle from './MovieTitle'
 import { use, useEffect, useState } from 'react'
+import { useParams } from 'next/navigation'
 
 export interface Movie {
   Title: string
@@ -11,12 +12,10 @@ export interface Movie {
 }
 
 // http://localhost:3000/movies/tt1877830
-export default function Page({
-  params
-}: {
-  params: Promise<{ movieId: string }>
-}) {
-  const { movieId } = use(params)
+// { params }: { params: Promise<{ movieId: string }>}
+// const { movieId } = use(params)
+export default function Page() {
+  const { movieId } = useParams()
   const [movie, setMovie] = useState<Movie | null>(null)
   useEffect(() => {
     async function fetchMovie() {
