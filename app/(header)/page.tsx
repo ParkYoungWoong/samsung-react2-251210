@@ -3,7 +3,7 @@ export default async function Home() {
   // throw new Error('Home Page Error!')
   return (
     <>
-      <h1>Home Page!</h1>
+      <h1>Home Page!(/app/(header))</h1>
     </>
   )
 }
