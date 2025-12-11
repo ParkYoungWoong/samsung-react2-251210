@@ -2,33 +2,33 @@ import Image from 'next/image'
 import MovieTitle from './MovieTitle'
 import { fetchMovieDetails } from '@/serverActions/movie'
 
-export async function generateMetadata({
-  params
-}: {
-  params: Promise<{ movieId: string }>
-}) {
-  const { movieId } = await params
-  const movie = await fetchMovieDetails(movieId)
-  return {
-    title: `${movie.Title}`,
-    description: movie.Plot,
-    openGraph: {
-      type: 'website',
-      title: movie.Title,
-      description: movie.Plot,
-      images: movie.Poster,
-      url: `https://abc.com/movies/${movieId}`,
-      siteName: '사이트 이름'
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: movie.Title,
-      description: movie.Plot,
-      images: movie.Poster,
-      site: '사이트 이름'
-    }
-  }
-}
+// export async function generateMetadata({
+//   params
+// }: {
+//   params: Promise<{ movieId: string }>
+// }) {
+//   const { movieId } = await params
+//   const movie = await fetchMovieDetails(movieId)
+//   return {
+//     title: `${movie.Title}`,
+//     description: movie.Plot,
+//     openGraph: {
+//       type: 'website',
+//       title: movie.Title,
+//       description: movie.Plot,
+//       images: movie.Poster,
+//       url: `https://abc.com/movies/${movieId}`,
+//       siteName: '사이트 이름'
+//     },
+//     twitter: {
+//       card: 'summary_large_image',
+//       title: movie.Title,
+//       description: movie.Plot,
+//       images: movie.Poster,
+//       site: '사이트 이름'
+//     }
+//   }
+// }
 
 // http://localhost:3000/movies/tt1877830
 export default async function Page({
