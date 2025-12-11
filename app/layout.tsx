@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`${roboto.className} antialiased`}></body>
+      <body className={`${roboto.className} antialiased`}>{children}</body>
     </html>
   )
 }
