@@ -5,6 +5,7 @@ import MovieTitle from './MovieTitle'
 export interface Movie {
   Title: string
   Poster: string
+  Plot: string
 }
 
 // http://localhost:3000/movies/tt1877830

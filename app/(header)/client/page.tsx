@@ -4,6 +4,7 @@ import type { Todo } from '@/serverActions/todo'
 import { useEffect, useState } from 'react'
 
 export default function Page() {
+  console.log(process.env.NEXT_PUBLIC_SITE_URL)
   const [todos, setTodos] = useState<Todo[]>([])
   useEffect(() => {
     fetchTodos().then(todos => setTodos(todos))
