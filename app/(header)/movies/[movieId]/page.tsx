@@ -5,8 +5,10 @@ import axios from 'axios'
 import MovieTitle from './MovieTitle'
 import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
+import Link from 'next/link'
 
 export interface Movie {
+  imdbID: string
   Title: string
   Poster: string
 }
@@ -32,12 +34,14 @@ export default function Page() {
       {movie && (
         <>
           <MovieTitle movie={movie} />
-          <Image
-            src={movie.Poster}
-            alt={movie.Title}
-            width={200}
-            height={300}
-          />
+          <Link href={`/poster/${movie.imdbID}`}>
+            <Image
+              src={movie.Poster}
+              alt={movie.Title}
+              width={200}
+              height={300}
+            />
+          </Link>
         </>
       )}
     </>
